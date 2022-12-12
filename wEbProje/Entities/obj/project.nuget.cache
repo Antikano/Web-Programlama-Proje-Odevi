@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pnAnD+wprhKFH7lduOsngx/F9VzJFtc2Ajl04mPuic1Uq7gVO8ZimhuJaK2vv+euBi1jfQQ6UOsNZwsq8DhjgQ==",
+  "dgSpecHash": "4F14wO2Jv7bc/O72xanNAwZhPw/OBRdF9PUMJfty9LbSSkkBAlMNh+d7zg5W6FZqJVw6wjOiz9ZzVyi/0V/sEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ozzen\\source\\repos\\DenemeProje\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Users\\Ozzen\\source\\githubThings\\Web-Programlama-Proje-Odevi\\wEbProje\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ozzen\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.11\\microsoft.entityframeworkcore.6.0.11.nupkg.sha512",
     "C:\\Users\\Ozzen\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.11\\microsoft.entityframeworkcore.abstractions.6.0.11.nupkg.sha512",

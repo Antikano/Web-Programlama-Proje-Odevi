@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w8e9qKPAeFMP2sB5lhtQNOWdsgamYAL+JamGtH0T9sJmbcCXcXcfEVLrvkBmZ/+ldFIt8WUMOh6t5l++wZSNRA==",
+  "dgSpecHash": "BwwxwNhKE9tbU3t7kvoZ0cb4wTAUEFE9SzJMW0bJR9r5EnmFFFD6OxjUmGArF0IOfBXm0LpK3W/5u4ZojEmZAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ozzen\\source\\repos\\DenemeProje\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\Ozzen\\source\\githubThings\\Web-Programlama-Proje-Odevi\\wEbProje\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ozzen\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Ozzen\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

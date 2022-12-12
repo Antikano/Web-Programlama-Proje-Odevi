@@ -10,5 +10,7 @@ namespace DataAccess.Abstract
 {
     public interface IKategoriDal : IEntityRepository<Kategori>
     {
-    }
+		public List<Kitap> kategoriVeKitaplar(int id);
+
+	}
 }

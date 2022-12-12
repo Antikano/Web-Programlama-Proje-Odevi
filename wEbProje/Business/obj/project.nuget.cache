@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N/WOtZUG8tS4WzQp3ELtuKd4E90ZOhD2i6gmFk1g2oMlZBg4lXaTCVezg/ZKcduL9gNLWo9b3W1X4YTyVqrNxA==",
+  "dgSpecHash": "Ojats9oYJeRTiwuWKClZcAG/Nd+bbRAFsPcKZmIu4pQJ+VHaaC7xTR9kGVcRRHVK0b1AQJvulLzcndUDv7K2lA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ozzen\\source\\repos\\DenemeProje\\Business\\Business.csproj",
+  "projectFilePath": "C:\\Users\\Ozzen\\source\\githubThings\\Web-Programlama-Proje-Odevi\\wEbProje\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ozzen\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Ozzen\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

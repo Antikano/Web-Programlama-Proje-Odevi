@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lbqOghLe06hJ1L7BPpF8pDFktZ6btyBF5Xl4hyXwHi2zL4xN72NN1fbZ53ZjNOKZewueP3p6tVB3EK6Wv5wUpg==",
+  "dgSpecHash": "uaYy7K7lanvrBcvOZL8zFQ2h45QelGyfoA5T37Sgl8mKgAgSLoJYguzNhheXfYmeY+3TYecX4gLgkQwbDLPoSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ozzen\\source\\repos\\DenemeProje\\WebApp\\WebApp.csproj",
+  "projectFilePath": "C:\\Users\\Ozzen\\source\\githubThings\\Web-Programlama-Proje-Odevi\\wEbProje\\WebApp\\WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ozzen\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Ozzen\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

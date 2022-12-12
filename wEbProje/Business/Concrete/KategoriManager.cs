@@ -35,7 +35,12 @@ namespace Business.Concrete
             return _kategoriDal.Get(x=>x.KategoriID==id);
         }
 
-        public void Update(Kategori update)
+		public List<Kitap> Kategoridenkitaplar(int id)
+		{
+            return _kategoriDal.kategoriVeKitaplar(id);
+		}
+
+		public void Update(Kategori update)
         {
             _kategoriDal.Update(update);
         }

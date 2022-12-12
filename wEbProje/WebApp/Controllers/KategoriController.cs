@@ -13,6 +13,16 @@ namespace WebApp.Controllers
 			return View();
 		}
 
+		public IActionResult KategorideKitaplar(int id)
+		{
+			if(id == null)
+			{
+				return NotFound();
+			}
+			var kategori = km.Kategoridenkitaplar(id);
+			return View(kategori);
+		}
+
 		public PartialViewResult KategoriPartial() //bu pek işe yaramadı
 		{
 			var Kategoriler = km.GetAll();

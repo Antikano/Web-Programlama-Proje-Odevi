@@ -9,57 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApp
 build_property.RootNamespace = WebApp
-build_property.ProjectDir = C:\Users\Ozzen\source\repos\DenemeProje\WebApp\
+build_property.ProjectDir = C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Ozzen\source\repos\DenemeProje\WebApp
+build_property.MSBuildProjectDirectory = C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/Home/Index.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/Home/Privacy.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/Kitap/Index.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/Kategori/KategorideKitaplar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcmlcS2F0ZWdvcmlkZUtpdGFwbGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/Kitap/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2l0YXBcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/Kitap/KitapDetaylari.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/Kitap/KitapDetaylari.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2l0YXBcS2l0YXBEZXRheWxhcmkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/Shared/Components/KategoriList/Default.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/Shared/Components/KategoriList/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcS2F0ZWdvcmlMaXN0XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/Shared/Components/Yorumlar/Default.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/Shared/Components/Yorumlar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcWW9ydW1sYXJcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/Shared/Error.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/Shared/KategoriPartial.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/Shared/KategoriPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEthdGVnb3JpUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/_ViewImports.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/_ViewStart.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozzen/source/repos/DenemeProje/WebApp/Views/Shared/_Layout.cshtml]
+[C:/Users/Ozzen/source/githubThings/Web-Programlama-Proje-Odevi/wEbProje/WebApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7882z672yd

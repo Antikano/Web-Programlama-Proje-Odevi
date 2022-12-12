@@ -11,6 +11,7 @@ namespace Business.Abstract
     {
             List<Kategori> GetAll();
             Kategori GetById(int id);
+		    List<Kitap> Kategoridenkitaplar(int id);
             void Add(Kategori add);
             void Delete(Kategori delete);
             void Update(Kategori update);

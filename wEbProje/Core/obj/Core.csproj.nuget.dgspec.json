@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ozzen\\source\\repos\\DenemeProje\\Core\\Core.csproj": {}
+    "C:\\Users\\Ozzen\\source\\githubThings\\Web-Programlama-Proje-Odevi\\wEbProje\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ozzen\\source\\repos\\DenemeProje\\Core\\Core.csproj": {
+    "C:\\Users\\Ozzen\\source\\githubThings\\Web-Programlama-Proje-Odevi\\wEbProje\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ozzen\\source\\repos\\DenemeProje\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Ozzen\\source\\githubThings\\Web-Programlama-Proje-Odevi\\wEbProje\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\Ozzen\\source\\repos\\DenemeProje\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\Ozzen\\source\\githubThings\\Web-Programlama-Proje-Odevi\\wEbProje\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\Ozzen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ozzen\\source\\repos\\DenemeProje\\Core\\obj\\",
+        "outputPath": "C:\\Users\\Ozzen\\source\\githubThings\\Web-Programlama-Proje-Odevi\\wEbProje\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ozzen\\AppData\\Roaming\\NuGet\\NuGet.Config",
