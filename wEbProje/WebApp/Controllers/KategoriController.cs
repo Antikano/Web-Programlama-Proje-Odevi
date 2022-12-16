@@ -20,6 +20,7 @@ namespace WebApp.Controllers
 				return NotFound();
 			}
 			var kategori = km.Kategoridenkitaplar(id);
+			ViewBag.kategori = km.GetById(id).KategoriAd;
 			return View(kategori);
 		}
 
