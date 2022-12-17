@@ -14,6 +14,8 @@ namespace Entities.Concrete
         public int YazarID { get; set; }
         public string YazarAd { get; set; }
         public string YazarTanım { get; set; }
+        public string YazarMail { get; set; }
+        public string YazarSifre { get; set; }
         public string YazarResim { get; set; }
         public List<Kitap> Kitaplar { get; set; }
 

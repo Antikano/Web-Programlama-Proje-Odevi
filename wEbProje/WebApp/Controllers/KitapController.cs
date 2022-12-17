@@ -1,15 +1,18 @@
 ﻿using Business.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp.Controllers
 {
-    public class KitapController : Controller
+	
+	public class KitapController : Controller
     {
         KitapManager km = new KitapManager(new EfKitapDal());
 
-        public IActionResult Index()
+		[Authorize]
+		public IActionResult Index()
         {
             var kitaplar = km.GetAll();
             return View(kitaplar);
