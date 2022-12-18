@@ -42,7 +42,8 @@ namespace WebApp.Controllers
 
             else
             {
-                return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+                TempData["hata"] = "Böyle bir kullanıcı yok! Lütfen tekrar giriş yapmayı deneyiniz.";
+                return View("Index");
             }
         }
 		

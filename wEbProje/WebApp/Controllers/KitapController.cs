@@ -17,7 +17,7 @@ namespace WebApp.Controllers
             var kitaplar = km.GetAll();
             return View(kitaplar);
         }
-
+        [Authorize]
         public IActionResult KitapDetaylari(int id)
         {
             if(id == null)
