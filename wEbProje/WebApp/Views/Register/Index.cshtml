@@ -1,0 +1,49 @@
+﻿@model Entities.Concrete.Yazar
+
+<div class="text-center row">
+    <h2>Kayıt Ol</h2>
+    <div class="col-md-4"></div>
+    <hr class="col-md-4" />
+</div>
+@if (TempData["hata"] != null)
+{
+    <div class="text-center row">
+        <h4 style="color:red">@TempData["hata"]</h4>
+        <div class="col-md-4"></div>
+        <hr class="col-md-4" />
+    </div>
+
+}
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="YazarAd" class="control-label">Yazar Adı</label>
+                <input asp-for="YazarAd" class="form-control" />
+                <span asp-validation-for="YazarAd" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="YazarMail" class="control-label">Email adresi</label>
+                <input asp-for="YazarMail" class="form-control" />
+                <span asp-validation-for="YazarMail" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="YazarSifre" class="control-label">Şifre</label>
+                <input asp-for="YazarSifre" type="password" class="form-control" />
+                <span asp-validation-for="YazarSifre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kayıt Ol!" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

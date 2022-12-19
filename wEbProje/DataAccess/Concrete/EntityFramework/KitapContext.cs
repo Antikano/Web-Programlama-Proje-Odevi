@@ -1,4 +1,6 @@
 ﻿using Entities.Concrete;
+using Entities.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class KitapContext : DbContext
+    public class KitapContext : IdentityDbContext<Kullanıcı,Role,string>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
