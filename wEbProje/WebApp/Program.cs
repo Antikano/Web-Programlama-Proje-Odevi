@@ -12,12 +12,15 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<KitapContext>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<KitapContext>();
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.Cookie.Name = "cookieName";
     options.LoginPath = "/Login/Index";
-    options.AccessDeniedPath = "/Login/Index";
 });
+
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+//{
+//    options.LoginPath= "/Login/Index";
+//});
 
 
 var app = builder.Build();
