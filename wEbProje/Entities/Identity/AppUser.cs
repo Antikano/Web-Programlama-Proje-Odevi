@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Entities.Identity
 {
-    public class Kullanıcı : IdentityUser<string>
+    public class AppUser : IdentityUser<int>
     {
-        public string KullanıcıAd { get; set; }
-        public string KullanıcıSoyad { get; set; }
-
+        public string Name { get; set; }
+        public string Surname { get; set; }
     }
 }

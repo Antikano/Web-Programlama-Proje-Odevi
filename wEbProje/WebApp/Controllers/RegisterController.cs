@@ -1,26 +1,53 @@
-﻿using Business.Concrete;
-using DataAccess.Concrete.EntityFramework;
-using Entities.Concrete;
+﻿using Entities.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Models.View_Model;
 
 namespace WebApp.Controllers
 {
     public class RegisterController : Controller
     {
-        YazarManager ym = new YazarManager(new EfYazarDal());
+        readonly UserManager<AppUser> userManager;
+
+        public RegisterController(UserManager<AppUser> userManager)
+        {
+            this.userManager = userManager;
+        }
+
         public IActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Register(Yazar yazar)
+        public async Task<IActionResult> Register(UserSignUpViewModel user)
         {
             if (ModelState.IsValid)
             {
-                ym.Add(yazar);
-                return RedirectToAction("Index","Login");
+                AppUser appUser = new AppUser
+                {
+                    Email = user.Email,
+                    UserName = user.UserName,
+                    Name = user.Name,
+                    Surname = user.Surname
+                };
+
+                var result = await userManager.CreateAsync(appUser, user.Password);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
+
             }
+
 
             else
             {

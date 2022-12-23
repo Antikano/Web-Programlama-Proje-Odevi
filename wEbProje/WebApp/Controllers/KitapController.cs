@@ -11,11 +11,11 @@ namespace WebApp.Controllers
     {
         KitapManager km = new KitapManager(new EfKitapDal());
 
-		[Authorize]
-		public IActionResult Index()
+        [Authorize]
+        public IActionResult Index()
         {
             var kitaplar = km.GetAll();
-            return View(kitaplar);
+            return View(kitaplar); 
         }
         [Authorize]
         public IActionResult KitapDetaylari(int id)

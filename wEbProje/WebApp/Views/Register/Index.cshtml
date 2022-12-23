@@ -1,4 +1,4 @@
-﻿@model Entities.Concrete.Yazar
+﻿@model WebApp.Models.View_Model.UserSignUpViewModel
 
 <div class="text-center row">
     <h2>Kayıt Ol</h2>
@@ -20,20 +20,35 @@
         <form asp-action="Register" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3">
-                <label asp-for="YazarAd" class="control-label">Yazar Adı</label>
-                <input asp-for="YazarAd" class="form-control" />
-                <span asp-validation-for="YazarAd" class="text-danger"></span>
+                <label asp-for="Name" class="control-label">ad</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="YazarMail" class="control-label">Email adresi</label>
-                <input asp-for="YazarMail" class="form-control" />
-                <span asp-validation-for="YazarMail" class="text-danger"></span>
+                <label asp-for="Surname" class="control-label">soyad</label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
-                <label asp-for="YazarSifre" class="control-label">Şifre</label>
-                <input asp-for="YazarSifre" type="password" class="form-control" />
-                <span asp-validation-for="YazarSifre" class="text-danger"></span>
+                <label asp-for="Password" class="control-label">Şifre</label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword" class="control-label">Şifre kontrol</label>
+                <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="UserName" class="control-label">kullanıcıadı</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="control-label">mail</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Kayıt Ol!" class="btn btn-primary" />
