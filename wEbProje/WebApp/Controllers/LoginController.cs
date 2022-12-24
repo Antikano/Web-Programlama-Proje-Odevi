@@ -18,10 +18,12 @@ namespace WebApp.Controllers
 
 
         readonly SignInManager<AppUser> signInManager;
+        readonly UserManager<AppUser> userManager;
 
-        public LoginController(SignInManager<AppUser> signInManager)
+        public LoginController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
         {
             this.signInManager = signInManager;
+            this.userManager = userManager;
         }
 
         public IActionResult Index()
@@ -33,10 +35,20 @@ namespace WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await signInManager.PasswordSignInAsync(user.Username, user.Password, true, false);
-                if (result.Succeeded)
+                var neden = userManager.FindByEmailAsync(user.Username);
+
+                if(neden.Result != null)
                 {
-                    return RedirectToAction("Index", "Kitap");
+                    var result = await signInManager.PasswordSignInAsync(neden.Result, user.Password, true, false);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Kitap");
+                    }
+                    else
+                    {
+                        TempData["hata"] = "Böyle bir kullanıcı yok! Lütfen tekrar giriş yapmayı deneyiniz.";
+                        return View("Index");
+                    }
                 }
                 else
                 {
