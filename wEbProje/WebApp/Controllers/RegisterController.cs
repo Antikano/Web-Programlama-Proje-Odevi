@@ -26,16 +26,20 @@ namespace WebApp.Controllers
             {
                 AppUser appUser = new AppUser
                 {
+                    
                     Email = user.Email,
                     UserName = user.UserName,
                     Name = user.Name,
                     Surname = user.Surname
                 };
+                
 
                 var result = await userManager.CreateAsync(appUser, user.Password);
+                
 
                 if (result.Succeeded)
                 {
+                    await userManager.AddToRoleAsync(appUser, "Kullanici");
                     return RedirectToAction("Index", "Login");
                 }
                 else

@@ -1,6 +1,7 @@
 using DataAccess.Concrete.EntityFramework;
 using Entities.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using WebApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,11 +11,19 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddDbContext<KitapContext>();
-builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<KitapContext>();
+builder.Services.AddIdentity<AppUser, AppRole>(_ => {
+    _.Password.RequiredLength = 5;
+    _.Password.RequireNonAlphanumeric = false; //Alfanumerik zorunluluðunu kaldýrýyoruz.
+    _.Password.RequireLowercase = true; //Küçük harf zorunluluðunu kaldýrýyoruz.
+    _.Password.RequireUppercase = true; //Büyük harf zorunluluðunu kaldýrýyoruz.
+    _.Password.RequireDigit = false; //0-9 arasý sayýsal karakter zorunluluðunu kaldýrýyoruz.
+}
+).AddErrorDescriber<CustomIdentityErrorDescriber>().AddEntityFrameworkStores<KitapContext>();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Login/Index";
+    options.LogoutPath= "/Login/Index";    
 });
 
 //builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>

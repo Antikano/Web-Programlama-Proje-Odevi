@@ -16,6 +16,7 @@ namespace Entities.Concrete
 		public string YorumBaslık { get; set; }
 		public string YorumIcerik { get; set; }
 		public DateTime YorumTarih { get; set; }
+		public int KitapID { get; set; }
 		public Kitap Kitap { get; set; }
 
 	}

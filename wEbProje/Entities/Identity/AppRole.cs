@@ -9,5 +9,6 @@ namespace Entities.Identity
 {
     public class AppRole : IdentityRole<int>
     {
+        public string Name { get; set; }
     }
 }

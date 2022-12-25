@@ -35,6 +35,8 @@ grid-row-gap: 0px;
 		<hr />
 		
 		@await Component.InvokeAsync("Yorumlar",new{id=Model.KitapID})
+		<partial name="_YorumYapPartial" />
+		
 	</div>
 	<hr />
 	</body>
