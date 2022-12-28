@@ -1,17 +1,56 @@
 ﻿@model List<Entities.Concrete.Kitap>
+		
 
 <body>
+
+	
+
+
 	<section class="main-content-w3layouts-agileits">
 		<div class="container">
-			<h3 class="tittle text-center fw-bold">Kitaplar</h3>
-			<hr />
+			
 			<div class="row inner-sec">
 				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
 					<div class="row mb-4">
-
+						<header style="margin-bottom:10px" class="bg-dark ">
+							<div class="container px-4 px-lg-5 my-5">
+								<div class="text-center text-white">
+									<h1 class="display-4 fw-bolder">Kitaplar</h1>
+									<p class="lead fw-normal text-white-50 mb-0">Tüm kitaplar</p>
+								</div>
+							</div>
+							<br />
+						</header>
 						@foreach (var item in Model)
 						{
-							<div style="margin-bottom:10px" class="col-lg-3 offset-1 card">
+
+							<div style="margin-bottom:10px;" class="col-lg-3 card">
+								<div class="card h-100">
+									
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">@item.YayinEvi</div>
+
+									<a asp-action="KitapDetaylari" asp-route-id="@item.KitapID">
+								<img style="height: 300px" src="@item.KitapResmi" class="card-img-top img-fluid" alt="">
+										</a>
+									
+									<div class="card-body p-4">
+										<div class="text-center">
+											
+											<h5 class="fw-bolder">@item.KitapAdi</h5>
+										
+										@*<p class="card-text mb-3">@item.KitapTanimi.Substring(0,22)... </p>*@
+									</div>
+									</div>
+									
+									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+									<div class="text-center"><a class="btn btn-primary read-m" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">Detaylar</a></div>
+									</div>
+								</div>
+							</div>
+								<br />
+							
+
+							@*<div style="margin-bottom:10px" class="col-lg-3 offset-1 card">
 								<a href="single.html">
 									<img style="height: 300px" src="@item.KitapResmi" class="card-img-top img-fluid" alt="">
 								</a>
@@ -24,7 +63,7 @@
 									<a class="btn btn-primary read-m" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">Detaylar</a>
 								</div>
 							</div>
-							<br />
+							<br />*@
 						}
 					</div>
 

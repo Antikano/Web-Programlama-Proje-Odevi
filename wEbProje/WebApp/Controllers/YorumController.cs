@@ -26,5 +26,17 @@ namespace WebApp.Controllers
             
 
         }
+
+        
+        public IActionResult YorumSil(int YorumID)
+        {
+            Yorum y = new Yorum();
+
+            y= km.GetById(YorumID);
+            int kitapID = y.KitapID;
+            km.Delete(y);
+
+            return RedirectToAction("KitapDetaylari", "Kitap", new { id = kitapID });
+        }
     }
 }

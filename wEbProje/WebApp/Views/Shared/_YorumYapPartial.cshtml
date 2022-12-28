@@ -15,10 +15,10 @@
         <div class="comment-bottom">
             <form asp-controller="Yorum" asp-action="Yorumla" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div hidden class="form-group">
                 <label class="control-label"></label>
                 <input name="YorumAd" class="form-control" value="@User.Identity.Name" readonly />
-                <span  class="text-danger"></span>
+                <span class="text-danger"></span>
             </div>
                 <div class="form-group">
                 <label  class="control-label"></label>

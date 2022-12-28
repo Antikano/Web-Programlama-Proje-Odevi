@@ -25,9 +25,18 @@ namespace WebApp.Controllers
             IdentityResult result = await _roleManager.CreateAsync(new AppRole { Name = model.Name });
             if (result.Succeeded)
             {
+
+
                 return View("RoleList");
             }
-            return View();
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+                }
+            }
+            return View("Index");
         }
         public IActionResult RoleList()
         {

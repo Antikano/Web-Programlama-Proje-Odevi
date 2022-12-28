@@ -22,7 +22,16 @@
 
             <div class="media-body">
                 <h5 class="mt-0">@item.YorumAd</h5>
-                <p>
+                @item.YorumTarih
+                        @if(User.Identity.Name == item.YorumAd || User.IsInRole("Admin"))
+                        {   
+                            
+                             <a asp-controller="Yorum" asp-action="YorumSil" asp-route-YorumID="@item.YorumID">Sil</a>
+                            @*<form asp-controller="Yorum" asp-action="YorumSil" method="post">
+                            <button  asp-route-id="@item">Yorumu Sil</button>
+                            </form>*@
+                        }
+                        <p>
                    @item.YorumIcerik
                 </p>
             </div>

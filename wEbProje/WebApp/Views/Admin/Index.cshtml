@@ -1,1 +1,44 @@
-﻿<h3>Admin Paneli</h3>
+﻿@model IQueryable<Entities.Identity.AppUser>
+@using Entities.Identity;
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+<h3>Admin Paneli</h3>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Sisteme üye olan kullanıcılar</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Kullanıcı Adı</th>
+                        <th>Adı</th>
+                        <th>Soyadı</th>
+                        <th>Email</th>
+                        <th>Kullanıcıyı Sil</th>
+                       
+                    </tr>
+                </thead>
+                
+                @foreach (var item in Model)
+                {
+                    <tbody>
+                        <tr>
+                            <td>@item.UserName</td>
+                            <td>@item.Name</td>
+                            <td>@item.Surname</td>
+                            <td>@item.Email</td>
+                            <td> <a asp-controller="Admin" asp-action="UserSil" asp-route-UserName="@item.UserName">Sil</a></td>
+                            
+
+                        </tr>
+
+                    </tbody>
+                }
+            </table>
+        </div>
+    </div>
+</div>
