@@ -42,3 +42,8 @@
         </div>
     </div>
 </div>
+<div class="card shadow mb-4">
+    @await Component.InvokeAsync("AdminKitaplar")
+  
+</div>
+<a asp-controller="Kitap" asp-action="KitapEkle" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Kitap Ekle</a>

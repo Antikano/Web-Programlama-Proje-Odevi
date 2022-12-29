@@ -1,6 +1,7 @@
 ﻿using Business.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,5 +30,19 @@ namespace WebApp.Controllers
 
             return View(kitap);
         }
+
+        public IActionResult KitapSil (int KitapID)
+        {
+            Kitap silinecekKitap = new Kitap();
+            silinecekKitap = km.GetById(KitapID);
+            km.Delete(silinecekKitap);
+            return RedirectToAction("Index", "Admin");
+        }
+
+        public IActionResult KitapEkle()
+        {
+            return View();
+        }
+
     }
 }

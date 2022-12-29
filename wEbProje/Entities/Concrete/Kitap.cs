@@ -12,9 +12,13 @@ namespace Entities.Concrete
     {
         [Key]
         public int KitapID { get; set; }
+        [Required]
         public String KitapAdi { get; set; }
+        [Required]
         public String KitapTanimi { get; set; }
+        [Required]
         public String KitapResmi { get; set; }
+        [Required]
         public String YayinEvi { get; set; }
         public int YazarID { get; set; }
         public Yazar Yazar { get; set; }
