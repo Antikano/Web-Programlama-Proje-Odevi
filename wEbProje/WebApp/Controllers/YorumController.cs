@@ -1,11 +1,13 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp.Controllers
 {
-    public class YorumController : Controller
+	[Authorize]
+	public class YorumController : Controller
     {
         YorumManager km = new YorumManager(new EfYorumDal());
         public IActionResult Index()

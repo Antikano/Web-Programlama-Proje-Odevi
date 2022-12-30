@@ -5,11 +5,11 @@ namespace WebApp.Models.View_Model
 {
     public class UserSignInViewModel
     {
-        [Required(ErrorMessage = "Kullanıcı Adı Alanının Girilmesi Zorunludur!")]
+        [Required(ErrorMessage = "email_req")]
         [DataType(DataType.EmailAddress)]
         public string Username { get; set; }
 
-        [Required(ErrorMessage = "Şifre Alanının Girilmesi Zorunludur!")]
+        [Required(ErrorMessage = "pass_req")]
         public string Password { get; set; }
 
         

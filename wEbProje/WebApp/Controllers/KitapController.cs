@@ -4,10 +4,11 @@ using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Models;
 
 namespace WebApp.Controllers
 {
-	
+	[Authorize]
 	public class KitapController : Controller
     {
         KitapManager km = new KitapManager(new EfKitapDal());
@@ -42,6 +43,29 @@ namespace WebApp.Controllers
         public IActionResult KitapEkle()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult KitapEkle(KitapResmiEkle kResim)
+        {
+            Kitap kitap = new Kitap();
+            if (kResim.KitapResmi != null) {
+                var extension = Path.GetExtension(kResim.KitapResmi.FileName);
+                var newImageName = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Resimler/KitapResimleri/", newImageName);
+                var stream = new FileStream(location, FileMode.Create);
+                kResim.KitapResmi.CopyTo(stream);
+                kitap.KitapResmi = "Resimler/KitapResimleri/"+newImageName;
+            }
+            else
+            {
+                return View("KitapEkle");
+            }
+            kitap.KitapTanimi = kResim.KitapTanimi;
+            kitap.KitapAdi    = kResim.KitapAdi;
+            kitap.YayinEvi    = kResim.YayinEvi;
+            kitap.YazarID     = kResim.YazarID;
+            km.Add(kitap);
+            return RedirectToAction("Index","Admin");
         }
 
     }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp.Controllers
 {
-	
+	[Authorize]
 	public class KategoriController : Controller
 	{
 		KategoriManager km = new KategoriManager(new EfKategoriDal());

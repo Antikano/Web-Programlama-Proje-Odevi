@@ -5,32 +5,33 @@ namespace WebApp.Models.View_Model
 {
     public class UserSignUpViewModel
     {
-        [Required(ErrorMessage = "Ad Alanının Girilmesi Zorunludur!")]
+        [Required(ErrorMessage = "name_req")]
 
         [Display(Name = "Ad")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Soyad Alanının Girilmesi Zorunludur!")]
+        [Required(ErrorMessage = "surname_req")]
         [Display(Name = "Soyad")]
 
         public string Surname { get; set; }
 
-        [Required(ErrorMessage = "Şifre alanının girilmesi zorunludur!")]
-        [MaxLength(23, ErrorMessage = "Maximum uzunluk 23 karakterdir!")]
-        [MinLength(5, ErrorMessage = "Minimum uzunluk 5 karakterdir!")]
+        [Required(ErrorMessage = "pass_req")]
+        [MaxLength(23, ErrorMessage = "maxpass")]
+        [MinLength(3, ErrorMessage = "minpass")]
         [Display(Name = "Şifre")]
         public string Password { get; set; }
 
+        [Required(ErrorMessage ="passag_req")]
         [Display(Name = "Şifre Tekrar")]
-        [Compare("Password", ErrorMessage = "Şifreler Uyuşmuyor!")]
+        [Compare("Password", ErrorMessage = "passAg")]
         public string ConfirmPassword { get; set; }
 
 
         [Display(Name = "Email")]
-        [Required(ErrorMessage = "Email alanının girilmesi zorunludur!")]
+        [Required(ErrorMessage = "email_req")]
         public string Email { get; set; }
         [Display(Name = "Kullanıcı Adı")]
-        [Required(ErrorMessage = "Kullanıcı Adı alanının girilmesi zorunludur!")]
+        [Required(ErrorMessage = "username_req")]
         public string UserName { get; set; }
     }
 }

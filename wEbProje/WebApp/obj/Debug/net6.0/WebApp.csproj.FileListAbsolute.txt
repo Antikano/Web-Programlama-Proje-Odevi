@@ -558,3 +558,16 @@ C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\b
 C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\bin\Debug\net6.0\en-US\WebApp.resources.dll
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\bin\Debug\net6.0\tr-TR\WebApp.resources.dll
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\obj\Debug\net6.0\WebApp.csproj.GenerateResource.cache
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\obj\Debug\net6.0\en-US\WebApp.resources.dll
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\obj\Debug\net6.0\tr-TR\WebApp.resources.dll
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\obj\Debug\net6.0\WebApp.Resources.Models.View_Model.UserSignInViewModel.en-US.resources
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\obj\Debug\net6.0\WebApp.Resources.Models.View_Model.UserSignInViewModel.tr-TR.resources
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\obj\Debug\net6.0\WebApp.Resources.Views.Login.Index.en-US.resources
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\obj\Debug\net6.0\WebApp.Resources.Views.Login.Index.tr-TR.resources
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\obj\Debug\net6.0\WebApp.Resources.Views.Register.Index.en-US.resources
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\obj\Debug\net6.0\WebApp.Resources.Views.Register.Index.tr-TR.resources
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\obj\Debug\net6.0\WebApp.Resources.Models.View_Model.UserSignUpViewModel.en-US.resources
+C:\Users\Ozzen\source\githubThings\Web-Programlama-Proje-Odevi\wEbProje\WebApp\obj\Debug\net6.0\WebApp.Resources.Models.View_Model.UserSignUpViewModel.tr-TR.resources

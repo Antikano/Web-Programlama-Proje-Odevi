@@ -21,6 +21,7 @@ namespace Entities.Concrete
         [Required]
         public String YayinEvi { get; set; }
         public int YazarID { get; set; }
+
         public Yazar Yazar { get; set; }
         public List<Kategori> Kategoriler { get; set; }
         public List<Yorum> Yorumlar { get; set; }

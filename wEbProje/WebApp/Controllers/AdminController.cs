@@ -1,11 +1,13 @@
 ﻿using DataAccess.Concrete.EntityFramework;
 using Entities.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp.Controllers
 {
-    public class AdminController : Controller
+	[Authorize]
+	public class AdminController : Controller
     {
         readonly UserManager<AppUser> userManager;
 

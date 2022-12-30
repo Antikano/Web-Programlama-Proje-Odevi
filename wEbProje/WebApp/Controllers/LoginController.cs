@@ -5,6 +5,7 @@ using Entities.Identity;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Security.Claims;
@@ -30,6 +31,20 @@ namespace WebApp.Controllers
 		{
 			return View();
 		}
+
+        [HttpPost]
+        public IActionResult Cookie(string culture)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.Now.AddDays(10) }
+            );
+
+            return RedirectToAction("Index");
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> Login(UserSignInViewModel user)
         {
@@ -56,7 +71,7 @@ namespace WebApp.Controllers
                     return View("Index");
                 }
             }
-            return View();
+            return View("Index");
            
         }
 

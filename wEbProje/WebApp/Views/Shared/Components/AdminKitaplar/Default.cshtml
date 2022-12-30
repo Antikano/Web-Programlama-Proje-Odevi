@@ -11,7 +11,6 @@
             <thead>
                 <tr>
                     <th>Kitap Adı</th>
-                    <th>Yazar</th>
                     <th>Yayın Evi</th>
                     <th>Kitap Sil</th>
 
@@ -23,10 +22,8 @@
                 <tbody>
                     <tr>
                         <td>@item.KitapAdi</td>
-                        <td>@item.Yazar</td>
                         <td>@item.YayinEvi</td>
-                        <td> <a asp-controller="Kitap" asp-action="KitapSil" asp-route-KitapID="@item.KitapID">Sil</a></td>
-
+                        <td> <a class="btn btn-danger btn-lg active btn-sm " asp-controller="Kitap" asp-action="KitapSil" asp-route-KitapID="@item.KitapID">Sil</a></td>
 
                     </tr>
 

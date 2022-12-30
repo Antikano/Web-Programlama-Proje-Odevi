@@ -1,6 +1,10 @@
 using DataAccess.Concrete.EntityFramework;
 using Entities.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.CodeAnalysis.Options;
+using Microsoft.Extensions.Options;
+using System.Globalization;
 using WebApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,14 +12,38 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddLocalization(opt=> { opt.ResourcesPath = "Resources"; });
+builder.Services.AddMvc()
+    .AddViewLocalization()
+    .AddDataAnnotationsLocalization();
+
+builder.Services.Configure<RequestLocalizationOptions>(opt => {
+    var supportedCultures = new List<CultureInfo>
+    {
+        new CultureInfo("en-US"),
+        new CultureInfo("tr-TR")
+    };
+    opt.DefaultRequestCulture = new RequestCulture("tr-TR");
+    opt.SupportedCultures= supportedCultures;
+    opt.SupportedUICultures= supportedCultures;
+
+    opt.RequestCultureProviders = new List<IRequestCultureProvider> {
+    new QueryStringRequestCultureProvider(),
+    new CookieRequestCultureProvider(),
+    new AcceptLanguageHeaderRequestCultureProvider()
+    };
+});
+
+
+
 
 
 builder.Services.AddDbContext<KitapContext>();
 builder.Services.AddIdentity<AppUser, AppRole>(_ => {
-    _.Password.RequiredLength = 5;
+    _.Password.RequiredLength = 3;
     _.Password.RequireNonAlphanumeric = false; //Alfanumerik zorunluluðunu kaldýrýyoruz.
-    _.Password.RequireLowercase = true; //Küçük harf zorunluluðunu kaldýrýyoruz.
-    _.Password.RequireUppercase = true; //Büyük harf zorunluluðunu kaldýrýyoruz.
+    _.Password.RequireLowercase = false; //Küçük harf zorunluluðunu kaldýrýyoruz.
+    _.Password.RequireUppercase = false; //Büyük harf zorunluluðunu kaldýrýyoruz.
     _.Password.RequireDigit = false; //0-9 arasý sayýsal karakter zorunluluðunu kaldýrýyoruz.
 }
 ).AddErrorDescriber<CustomIdentityErrorDescriber>().AddEntityFrameworkStores<KitapContext>();
@@ -36,6 +64,9 @@ var app = builder.Build();
 
 
 
+
+
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -52,6 +83,13 @@ app.UseRouting();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+var options = ((IApplicationBuilder)app).ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+
+app.UseRequestLocalization(options.Value);
+
+//var options = ((IApplicationBuilder)app).ApplicationServices.GetService<Ioptions<RequestLocalizationOptions>>();
+//app.UseRequestLocalization(options.Value);
 
 app.MapControllerRoute(
     name: "default",

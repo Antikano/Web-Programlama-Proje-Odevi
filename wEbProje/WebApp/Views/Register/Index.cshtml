@@ -1,73 +1,142 @@
-﻿@model WebApp.Models.View_Model.UserSignUpViewModel
+﻿@using Microsoft.AspNetCore.Localization;
+@using Microsoft.Extensions.Options;
+@model WebApp.Models.View_Model.UserSignUpViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+        .ToList();
+}
+
+<form asp-action="Cookie" method="post">
+    <label>Language:</label>
+    <select name="culture" onchange="this.form.submit()" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
+    </select>
+</form>
+
+@{
+    string culture = "", uiculture = "";
+    if (Context.Request.QueryString.HasValue)
+    {
+        string url = Context.Request.QueryString.Value;
+        culture = Context.Request.Query["culture"];
+        uiculture = Context.Request.Query["ui-culture"];
+    }
+}
+
+
 @{
     Layout = null;
 }
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebApp</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebApp.styles.css" asp-append-version="true" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Register</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
 
-<div class="text-center row">
-    <h2>Kayıt Ol</h2>
-    <div class="col-md-4"></div>
-    <hr class="col-md-4" />
-</div>
-@if (TempData["hata"] != null)
-{
-    <div class="text-center row">
-        <h4 style="color:red">@TempData["hata"]</h4>
-        <div class="col-md-4"></div>
-        <hr class="col-md-4" />
+
+
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+
+            <div class="row" style="justify-content:center">
+
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">@localizer["reg"]</h1>
+                            @if (TempData["hata"] != null)
+                            {
+                                <div class="text-center row">
+                                    <h4 style="color:red">@TempData["hata"]</h4>
+                                    <div class="col-md-4"></div>
+                                    <hr class="col-md-4" />
+                                </div>
+
+                            }
+                        </div>
+                        <form asp-action="Register" method="post" >
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input asp-for="Name" type="text" class="form-control form-control-user" 
+                                           placeholder="@localizer["name"]">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input asp-for="Surname" type="text" class="form-control form-control-user"
+                                           placeholder="@localizer["surname"]">
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Email" type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                       placeholder="@localizer["email"]">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input asp-for="Password" type="password" class="form-control form-control-user"
+                                           placeholder="@localizer["pass"]">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input asp-for="ConfirmPassword" type="password" class="form-control form-control-user"
+                                           placeholder="@localizer["cpass"]">
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+                            </div>
+                             <div class="form-group">
+                               <input asp-for="UserName" type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                       placeholder="@localizer["username"]">
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <input class="btn btn-primary btn-user btn-block" type="submit" value="@localizer["regOl"]!" />
+                            <hr>
+
+                        </form>
+                        
+
+                        <div class="text-center">
+                            <a class="small" asp-controller="Login" asp-action="Index">@localizer["log"]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-}
-<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-        <form asp-action="Register" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="mb-3">
-                <label asp-for="Name" class="control-label">ad</label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="Surname" class="control-label">soyad</label>
-                <input asp-for="Surname" class="form-control" />
-                <span asp-validation-for="Surname" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="Password" class="control-label">Şifre</label>
-                <input asp-for="Password" type="password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="ConfirmPassword" class="control-label">Şifre kontrol</label>
-                <input asp-for="ConfirmPassword" type="password" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="UserName" class="control-label">kullanıcıadı</label>
-                <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="Email" class="control-label">mail</label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Kayıt Ol!" class="btn btn-primary" />
-                <input type="submit" value="Giriş Yap!" class="btn btn-primary" asp-controller="Login" asp-action="Index" />
-            </div>
-        </form>
-    </div>
 </div>
+
+
+<script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+<script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+<script src="~/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+
 
 @section Scripts {
     @{

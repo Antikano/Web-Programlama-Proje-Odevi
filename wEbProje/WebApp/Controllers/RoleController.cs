@@ -1,11 +1,13 @@
 ﻿using Entities.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebApp.Models;
 
 namespace WebApp.Controllers
 {
-    public class RoleController : Controller
+	[Authorize]
+	public class RoleController : Controller
     {
         readonly RoleManager<AppRole> _roleManager;
         public RoleController(RoleManager<AppRole> roleManager)

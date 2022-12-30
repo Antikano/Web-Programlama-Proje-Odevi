@@ -7,7 +7,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Sisteme üye olan kullanıcılar</h6>
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -31,7 +31,7 @@
                             <td>@item.Name</td>
                             <td>@item.Surname</td>
                             <td>@item.Email</td>
-                            <td> <a asp-controller="Admin" asp-action="UserSil" asp-route-UserName="@item.UserName">Sil</a></td>
+                            <td> <a class="btn btn-danger btn-lg active btn-sm " asp-controller="Admin" asp-action="UserSil" asp-route-UserName="@item.UserName">Sil</a></td>
                             
 
                         </tr>
