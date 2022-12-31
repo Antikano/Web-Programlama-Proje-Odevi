@@ -120,11 +120,14 @@
   <data name="cpass" xml:space="preserve">
     <value>Confirm Password</value>
   </data>
+  <data name="dil" xml:space="preserve">
+    <value>Language :</value>
+  </data>
   <data name="email" xml:space="preserve">
     <value>Email Address</value>
   </data>
   <data name="log" xml:space="preserve">
-    <value>Already a member? Sign in!</value>
+    <value>Already a member? Sign on!</value>
   </data>
   <data name="name" xml:space="preserve">
     <value>Name</value>

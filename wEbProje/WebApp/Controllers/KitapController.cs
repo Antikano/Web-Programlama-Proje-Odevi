@@ -34,8 +34,13 @@ namespace WebApp.Controllers
 
         public IActionResult KitapSil (int KitapID)
         {
+            KitapContext k = new KitapContext();
             Kitap silinecekKitap = new Kitap();
             silinecekKitap = km.GetById(KitapID);
+
+            var silinecekYorum = k.Yorums.Where(y => y.KitapID == silinecekKitap.KitapID).ToList();
+            k.Yorums.RemoveRange(silinecekYorum);
+            k.SaveChanges();
             km.Delete(silinecekKitap);
             return RedirectToAction("Index", "Admin");
         }

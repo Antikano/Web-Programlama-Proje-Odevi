@@ -11,12 +11,6 @@
         .ToList();
 }
 
-<form asp-action="Cookie" method="post">
-    <label>Language:</label>
-    <select name="culture" onchange="this.form.submit()" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
-    </select>
-</form>
-
 @{
     string culture = "", uiculture = "";
     if (Context.Request.QueryString.HasValue)
@@ -58,6 +52,15 @@
 
     <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
+            <div class="p-2">
+                <form asp-action="Cookie" method="post">
+                    <label>@localizer["dil"]</label>
+                    <select name="culture" onchange="this.form.submit()" asp-for="@requestCulture.RequestCulture.UICulture.Name" >
+                        <option  lang="en" class="fa-flag-usa" value="en-US">English (United States)</option>
+                        <option lang="tr" value="tr-TR">Turkish (Turkey)</option> 
+                    </select>
+                </form>
+            </div>
 
             <div class="row" style="justify-content:center">
 

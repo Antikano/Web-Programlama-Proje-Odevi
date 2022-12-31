@@ -120,6 +120,9 @@
   <data name="cpass" xml:space="preserve">
     <value>Şifrenizi Tekrar girin</value>
   </data>
+  <data name="dil" xml:space="preserve">
+    <value>Dili Seçin :</value>
+  </data>
   <data name="email" xml:space="preserve">
     <value>Email Adresiniz</value>
   </data>

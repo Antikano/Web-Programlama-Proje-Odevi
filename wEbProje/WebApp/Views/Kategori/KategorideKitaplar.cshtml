@@ -6,7 +6,7 @@
 	<section class="main-content-w3layouts-agileits">
 		<div class="container">
 			<h3 class="tittle text-center fw-bold"></h3>
-			<hr />
+			
 			<div class="row inner-sec">
 				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
 					<div class="row mb-4">
@@ -22,31 +22,28 @@
 						@if(Model.Count!=0){
 						@foreach (var item in Model)
 						{
+								<div class="col-md-4 p-2">
+									<div class="card ">
+										<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">@item.YayinEvi</div>
 
-							<div style="margin-bottom:10px" class="col-lg-3  card">
-								<div class="card h-100">
-									<!-- Sale badge-->
-									<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">@item.YayinEvi</div>
-									<!-- Product image-->
 										<a asp-controller="Kitap" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">
-										<img style="height: 300px" src="~/@item.KitapResmi" class="card-img-top img-fluid" alt="">
-									</a>
-									<!-- Product details-->
-									<div class="card-body p-4">
-										<div class="text-center">
-											<!-- Product name-->
-											<h5 class="fw-bolder">@item.KitapAdi</h5>
-											<!-- Product price-->
-											<p class="card-text mb-3">@item.KitapTanimi.Substring(0,22)...</p>
+											<img src="~/@item.KitapResmi" class="card-img-top" style="height:300px" alt="">
+										</a>
+
+										<div class="card-body">
+											<div class="text-center">
+
+												<h5 class="fw-bolder">@item.KitapAdi</h5>
+
+											</div>
+										</div>
+
+										<div class=" p-4">
+											<div class="text-center"><a class="btn btn-primary read-m" asp-controller="Kitap" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">Detaylar</a></div>
 										</div>
 									</div>
-									<!-- Product actions-->
-									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-										<div class="text-center"><a class="btn btn-primary read-m" asp-controller="Kitap" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">Detaylar</a></div>
-									</div>
+
 								</div>
-							</div>
-							<br />
 
 							}
 						}

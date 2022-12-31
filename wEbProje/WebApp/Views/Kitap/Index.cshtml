@@ -6,8 +6,8 @@
 		<div class="container">
 			
 			<div class="row inner-sec">
-				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
-					<div class="row mb-4">
+				<div class="col-lg-8 text-left">
+					<div class="row " >
 						<header style="margin-bottom:10px" class="bg-dark ">
 							<div class="container px-4 px-lg-5 my-5">
 								<div class="text-center text-white">
@@ -19,47 +19,30 @@
 						</header>
 						@foreach (var item in Model)
 						{
+							<div class="col-md-4 p-2">
+								<div class= "card ">
+									<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">@item.YayinEvi</div>
 
-							<div style="margin-bottom:10px;" class="col-lg-3 card">
-								<div class="card h-100">
-									
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">@item.YayinEvi</div>
+									<a  asp-action="KitapDetaylari" asp-route-id="@item.KitapID">
+										<img src="@item.KitapResmi" class="card-img-top" style="height:300px" alt="">
+									</a>
 
-									<a asp-action="KitapDetaylari" asp-route-id="@item.KitapID">
-								<img style="height: 300px" src="@item.KitapResmi" class="card-img-top img-fluid" alt="">
-										</a>
-									
-									<div class="card-body p-4">
+									<div class="card-body">
 										<div class="text-center">
-											
+
 											<h5 class="fw-bolder">@item.KitapAdi</h5>
-										
-										@*<p class="card-text mb-3">@item.KitapTanimi.Substring(0,22)... </p>*@
+
+										</div>
 									</div>
-									</div>
-									
-									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-									<div class="text-center"><a class="btn btn-primary read-m" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">Detaylar</a></div>
+
+									<div class=" p-4">
+										<div class="text-center"><a class="btn btn-primary read-m" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">Detaylar</a></div>
 									</div>
 								</div>
+
 							</div>
-								<br />
 							
-
-							@*<div style="margin-bottom:10px" class="col-lg-3 offset-1 card">
-								<a href="single.html">
-									<img style="height: 300px" src="@item.KitapResmi" class="card-img-top img-fluid" alt="">
-								</a>
-								<div class="card-body">
-
-									<h5 class="card-title">
-										<a style="text-decoration:solid" class="text-black" href="single.html">@item.KitapAdi</a>
-									</h5>
-									<p class="card-text mb-3">@item.KitapTanimi.Substring(0,22)... </p>
-									<a class="btn btn-primary read-m" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">Detaylar</a>
-								</div>
-							</div>
-							<br />*@
+							
 						}
 					</div>
 
@@ -72,3 +55,39 @@
 	</section>
 
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div style="margin-bottom:10px;" class="col-lg-4 offset-1  card">
+								<div class="card h-100">
+
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">@item.YayinEvi</div>
+
+									<a asp-action="KitapDetaylari" asp-route-id="@item.KitapID">
+								<img style="height: 300px" src="@item.KitapResmi" class="card-img-top img-fluid" alt="">
+										</a>
+
+									<div class="card-body p-4">
+										<div class="text-center">
+
+											<h5 class="fw-bolder">@item.KitapAdi</h5>
+
+
+									</div>
+									</div>
+
+									<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+									<div class="text-center"><a class="btn btn-primary read-m" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">Detaylar</a></div>
+									</div>
+								</div>
+							</div>
+								<br />*@

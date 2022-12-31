@@ -21,9 +21,11 @@
             {
                 <tbody>
                     <tr>
-                        <td>@item.KitapAdi</td>
+                        <td><a class="text-decoration-none" asp-controller="Kitap" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">@item.KitapAdi</a></td>
                         <td>@item.YayinEvi</td>
-                        <td> <a class="btn btn-danger btn-lg active btn-sm " asp-controller="Kitap" asp-action="KitapSil" asp-route-KitapID="@item.KitapID">Sil</a></td>
+                        <td>
+                            <a class="btn btn-danger btn-lg active btn-sm " asp-controller="Kitap" asp-action="KitapSil" asp-route-KitapID="@item.KitapID">Sil</a>
+                            </td>
 
                     </tr>
 

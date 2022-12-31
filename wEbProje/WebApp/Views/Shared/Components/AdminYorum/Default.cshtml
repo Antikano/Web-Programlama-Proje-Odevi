@@ -1,0 +1,38 @@
+﻿@model List<Entities.Concrete.Yorum>
+
+
+
+<div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Kitaplar</h6>
+</div>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tarih</th>
+                    
+                    <th>İçerik</th>
+                    <th>Sil</th>
+
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>@item.YorumID</td>
+                        <td>@item.YorumTarih</td>
+                       
+                        <td>@item.YorumIcerik</td>
+                        <td> <a class="btn btn-danger btn-lg active btn-sm " asp-controller="Yorum" asp-action="YorumSil" asp-route-YorumID="@item.YorumID">Sil</a></td>
+
+                    </tr>
+
+                </tbody>
+            }
+        </table>
+    </div>
+</div>

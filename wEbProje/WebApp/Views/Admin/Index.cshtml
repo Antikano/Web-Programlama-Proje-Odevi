@@ -3,47 +3,77 @@
 @using Microsoft.AspNetCore.Identity;
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
-<h3>Admin Paneli</h3>
 
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Kullanıcı Adı</th>
-                        <th>Adı</th>
-                        <th>Soyadı</th>
-                        <th>Email</th>
-                        <th>Kullanıcıyı Sil</th>
-                       
-                    </tr>
-                </thead>
-                
-                @foreach (var item in Model)
-                {
-                    <tbody>
-                        <tr>
-                            <td>@item.UserName</td>
-                            <td>@item.Name</td>
-                            <td>@item.Surname</td>
-                            <td>@item.Email</td>
-                            <td> <a class="btn btn-danger btn-lg active btn-sm " asp-controller="Admin" asp-action="UserSil" asp-route-UserName="@item.UserName">Sil</a></td>
-                            
+    <head>
+       
+  
+  
+    </head>
+<div class="container">
+    <h2>Admin Paneli</h2>
+    <ul class="nav nav-tabs ">
+        <li class=" btn btn-light mr-2"><a class="btn" data-toggle="tab" href="#user">Kullanıcılar</a></li>
+        <li class=" btn btn-light"><a class="btn" data-toggle="tab" href="#kitap">Kitaplar</a></li>
+        <li class=" btn btn-light"><a class="btn" data-toggle="tab" href="#yorum">Yorumlar</a></li>
+        
+    </ul>
 
-                        </tr>
+    <div class="tab-content">
+        <div id="user" class="tab-pane fade ">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Kullanıcılar</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Kullanıcı Adı</th>
+                                    <th>Adı</th>
+                                    <th>Soyadı</th>
+                                    <th>Email</th>
+                                    <th>Kullanıcıyı Sil</th>
 
-                    </tbody>
-                }
-            </table>
+                                </tr>
+                            </thead>
+
+                            @foreach (var item in Model)
+                            {
+                                <tbody>
+                                    <tr>
+                                        <td>@item.UserName</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Surname</td>
+                                        <td>@item.Email</td>
+                                        <td> <a class="btn btn-danger btn-lg active btn-sm " asp-controller="Admin" asp-action="UserSil" asp-route-UserName="@item.UserName">Sil</a></td>
+
+
+                                    </tr>
+
+                                </tbody>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="kitap" class="tab-pane fade">
+
+            <div class="card shadow mb-4">
+                @await Component.InvokeAsync("AdminKitaplar")
+
+            </div>
+            <a asp-controller="Kitap" asp-action="KitapEkle" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Kitap Ekle</a>
+        </div>
+        <div id="yorum" class="tab-pane fade">
+
+            <div class="card shadow mb-4">
+                @await Component.InvokeAsync("AdminYorum")
+
+            </div>
         </div>
     </div>
 </div>
-<div class="card shadow mb-4">
-    @await Component.InvokeAsync("AdminKitaplar")
-  
-</div>
-<a asp-controller="Kitap" asp-action="KitapEkle" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Kitap Ekle</a>
+
+
