@@ -55,7 +55,7 @@
             <div class="p-2">
                 <form asp-action="Cookie" method="post">
                     <label>@localizer["dil"]</label>
-                    <select name="culture" onchange="this.form.submit()" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
+                    <select class="custom-select-sm" name="culture" onchange="this.form.submit()" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
                     </select>
                 </form>
             </div>
