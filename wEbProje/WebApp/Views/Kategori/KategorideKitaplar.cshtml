@@ -23,7 +23,7 @@
 						@foreach (var item in Model)
 						{
 								<div class="col-6 col-md-4 p-2">
-									<div class="card ">
+									<div class="card border-bottom-dark border-dark p-3">
 										<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">@item.YayinEvi</div>
 
 										<a asp-controller="Kitap" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">
@@ -39,7 +39,7 @@
 										</div>
 
 										<div class=" p-4">
-											<div class="text-center"><a class="btn btn-primary read-m" asp-controller="Kitap" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">Detaylar</a></div>
+											<div class="text-center"><a class="btn btn-dark read-m" asp-controller="Kitap" asp-action="KitapDetaylari" asp-route-id="@item.KitapID">Detaylar</a></div>
 										</div>
 									</div>
 
